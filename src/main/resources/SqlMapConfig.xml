@@ -8,14 +8,14 @@
         <!--配置mysql的环境-->
         <environment id="mysql">
             <!--配置事务的类型-->
-            <transactionManager type="JDBC"></transactionManager>
+            <transactionManager type="JDBC"/>
             <!--配置连接池即数据源-->
             <dataSource type="POOLED">
                 <!--配置数据库连接的基本信息-->
                 <!--jdbc驱动程序-->
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
                 <!--数据库连接字符串-->
-                <property name="url" value="jdbc:mysql://localhost:3306/default"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/data"/>
                 <property name="username" value="root"/>
                 <property name="password" value="root"/>
             </dataSource>
