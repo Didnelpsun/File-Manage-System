@@ -5,10 +5,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+// import org.apache.ibatis.io.Resources;
+// import org.apache.ibatis.session.SqlSession;
+// import org.apache.ibatis.session.SqlSessionFactory;
+// import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import org.didnelpsun.mybatis.io.Resources;
+import org.didnelpsun.mybatis.sqlsession.*;
+
 import org.didnelpsun.dao.UserDAO;
 import org.didnelpsun.entity.User;
 import org.junit.Test;
