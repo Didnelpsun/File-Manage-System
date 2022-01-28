@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--namespace是DAO的地址-->
 <mapper namespace="org.didnelpsun.dao.UserDAO">
-    <!--配置查询所有用户，id为对应类的方法名，不能随便改-->
+    <!--配置查询所有，id为对应类的方法名，不能随便改-->
     <!--resultType即持久层返回的数据应该封装成什么样的数据类-->
     <select id="selectAllUsers" resultType="org.didnelpsun.entity.User">
-        select * from user;
+        select * from user
     </select>
     <!--插入用户-->
     <insert id="insertUser" parameterType="org.didnelpsun.entity.User">
@@ -37,9 +37,5 @@
     <!--获取用户总数，即记录总条数-->
     <select id="getUsersSum" resultType="Integer">
         select count(id) from user;
-    </select>
-    <!--根据Query对象模糊查询用户-->
-    <select id="selectUsersByQuery" parameterType="org.didnelpsun.entity.Query" resultType="org.didnelpsun.entity.User">
-        select * from user where name like #{user.username};
     </select>
 </mapper>

@@ -1,7 +1,6 @@
 package org.didnelpsun.dao;
 
 import org.didnelpsun.entity.User;
-import org.didnelpsun.entity.Query;
 
 import java.util.List;
 
@@ -20,6 +19,4 @@ public interface UserDAO {
     List<User> selectUsersByName(String name);
     // 获取用户总数
     Integer getUsersSum();
-    // 根据查询条件对象Query混合模糊查询
-    List<User> selectUsersByQuery(Query query);
 }
