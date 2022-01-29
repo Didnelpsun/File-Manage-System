@@ -5,15 +5,15 @@
 <mapper namespace="org.didnelpsun.dao.UserDAO">
     <!--配置查询所有，id为对应类的方法名，不能随便改-->
     <!--resultType即持久层返回的数据应该封装成什么样的数据类-->
-    <select id="selectAllUsers" resultType="org.didnelpsun.entity.User">
+    <select id="selectAllUsers" resultType="user">
         select * from user
     </select>
     <!--插入用户-->
-    <insert id="insertUser" parameterType="org.didnelpsun.entity.User">
+    <insert id="insertUser" parameterType="user">
         insert into user(name,sex,birthday,address) values (#{name},#{sex},#{birthday},#{address});
     </insert>
     <!--更新用户-->
-    <update id="updateUser" parameterType="org.didnelpsun.entity.User">
+    <update id="updateUser" parameterType="user">
         update user set name=#{name},sex=#{sex},birthday=#{birthday},address=#{address} where id=#{id};
     </update>
     <!--删除用户-->
@@ -22,11 +22,11 @@
         delete from user where id=#{id};
     </delete>
     <!--查询一个用户-->
-    <select id="selectUser" parameterType="Integer" resultType="org.didnelpsun.entity.User">
+    <select id="selectUser" parameterType="Integer" resultType="user">
         select * from user where id=#{id};
     </select>
     <!--根据名称模糊查询用户-->
-    <select id="selectUsersByName" parameterType="String" resultType="org.didnelpsun.entity.User">
+    <select id="selectUsersByName" parameterType="String" resultType="user">
         <!--这里不能使用百分号来模糊查询，必须在测试代码中写-->
         <!--这种方式参数是以PreparedStatement占位参数的形式变成SQL语句，即进行预处理，所以更推荐-->
         select * from user where name like #{name}

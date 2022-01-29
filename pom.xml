@@ -101,7 +101,17 @@
         </plugin>
       </plugins>
     </pluginManagement>
-    <!--运行目标-->
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <configuration>
+                  <source>16</source>
+                  <target>16</target>
+              </configuration>
+          </plugin>
+      </plugins>
+      <!--运行目标-->
     <defaultGoal>compile</defaultGoal>
   </build>
   <packaging>jar</packaging>
