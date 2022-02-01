@@ -25,5 +25,6 @@
     <mappers>
         <!--resource是相对于resources文件夹的资源地址-->
         <mapper resource="org/didnelpsun/dao/UserDAO.xml"/>
+        <mapper resource="org/didnelpsun/dao/RoleDAO.xml"/>
     </mappers>
 </configuration>
