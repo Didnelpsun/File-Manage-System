@@ -56,7 +56,9 @@ public class AppTest {
     @Test
     public void Test() {
         // 5.使用代理对象执行方法
-        testSelectAllRoles();
+        // testSelectAllRoles();
+        // testSelectAllRoleUsers();
+        testSelectAllUserRoles();
     }
 
     // 测试查询所有用户
@@ -64,6 +66,17 @@ public class AppTest {
         List<User> users = userDAO.selectAllUsers();
         for (User user : users) {
             System.out.println(user.toString());
+        }
+    }
+
+    // 测试查询所有用户与角色
+    public void testSelectAllUserRoles() {
+        List<User> users = userDAO.selectAllUserRoles();
+        for (User user : users) {
+            System.out.println(user.toString());
+            for(Role role: user.getRoles()){
+                System.out.println(role.toString());
+            }
         }
     }
 
@@ -78,6 +91,17 @@ public class AppTest {
         List<Role> roles = roleDAO.selectAllRoles();
         for (Role role : roles) {
             System.out.println(role.toString());
+        }
+    }
+
+    // 测试查询所有角色与用户
+    public void testSelectAllRoleUsers() {
+        List<Role> roles = roleDAO.selectAllRoleUsers();
+        for (Role role : roles) {
+            System.out.println(role.toString());
+            for(User user: role.getUsers()){
+                System.out.println(user.toString());
+            }
         }
     }
 }

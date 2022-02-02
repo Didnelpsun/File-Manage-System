@@ -1,11 +1,13 @@
 package org.didnelpsun.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Role implements Serializable {
     private Integer id;
     private String name;
     private String description;
+    private List<User> users;
 
     public Integer getId() {
         return id;
@@ -29,6 +31,14 @@ public class Role implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 
     @Override

@@ -2,6 +2,7 @@ package org.didnelpsun.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 public class User implements Serializable{
     private Integer id;
@@ -9,6 +10,7 @@ public class User implements Serializable{
     private String sex;
     private Date birthday;
     private String address;
+    private List<Role> roles;
 
     public Integer getId() {
         return id;
@@ -48,6 +50,14 @@ public class User implements Serializable{
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 
     @Override
